@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+
+<body>
+    <div style="background-color: aqua;">
+
+        Ingrese el capital
+        <input type="number" id="idCapitalInvertir" placeholder="Ingrese">
+
+        <br> ingrese la cantidad de Meses a realizar el Plazo Fijo
+        <input type="number" id="idCantidadDeMeses">
+        <h1>Tasa Preferencial
+
+        </h1>
+        <br>
+        <label><input type="checkbox" id="idCheckClienteBanco" value="first_checkbox" /> Para Clientes del Banco (0.7%) más sobre rentabilidad
+  </label>
+        <br />
+        <input type="checkbox" name="" id="idCheckClienteBanco">
+        <br> Plazo fijo autorenovable cada 3 meses (0.9%) más sobre rentabilidad
+        <!-- <input type="checkbox" name="" id="idCheckAutoranovable"> -->
+        <br>
+        <button type="button" id="idBtnCalcular">Calcular Rentabilidad</button>
+
+
+        <!-- rentabilidad -->
+        <h1>Rentabilidad Calculada</h1>
+        <label id="capitalInvertido">Capital Invertido</label>
+        <br>
+        <label id="capitalInvertido">Rentabilidad Plazo Fijo</label>
+        <br>
+        <label id="capitalInvertido">Adicional por Cliente del Banco </label>
+        <br>
+        <label id="capitalInvertido">Adicional por Plazo Fijo Auto Renovable (3 meses)</label>
+        <br>
+        <label id="capitalInvertido">Rentabilidad Total</label>
+    </div>
+
+
+
+
+    <script src="controlador.js"></script>
+</body>
+
+</html>
