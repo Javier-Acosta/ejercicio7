@@ -45,6 +45,7 @@ const fnAdicionalPorSerClienteDelBanco = (esClienteDelBanco, rentabilidadTotal) 
 const fnAdicionalPorPlazoFijosAutorenovable = (aceptaAutoRenovable, rentabilidadTotal) => {
 
     if (aceptaAutoRenovable) {
+
         return (rentabilidadTotal * 0.9) / 100;
     } else {
         return 0;
@@ -59,13 +60,20 @@ window.addEventListener("load", () => {
     const idCheckClienteBanco = document.querySelector("#idCheckClienteBanco");
     const idCheckAutoranovable = document.querySelector("#idCheckAutoranovable");
     const idBtnCalcular = document.querySelector("#idBtnCalcular");
+    const capitalInvertido = document.querySelector("#capitalInvertido");
+    const rentabilidadPlazo = document.querySelector("#rentabilidadPlazo");
+    const AdicionalCliente = document.querySelector("#AdicionalCliente");
+    const AdicionalPlazoFijo = document.querySelector("#AdicionalPlazoFijo");
+    const rentabilidadTotalES = document.querySelector("#rentabilidadTotal");
 
     idBtnCalcular.addEventListener("click", () => {
 
 
         let importeCapital = Number(idCapitalInvertir.value);
-        let rentabilidadMensual = 0;
+        console.log(importeCapital);
 
+
+        let rentabilidadMensual = 0;
         rentabilidadMensual = fnDevolverRentabilidadMensual(importeCapital);
         console.log(rentabilidadMensual);
 
@@ -73,22 +81,54 @@ window.addEventListener("load", () => {
         //  cantidad de meses
         let cantidadDeMes = 0;
         cantidadDeMes = Number(idCantidadDeMeses.value);
+        console.log(cantidadDeMes);
+
 
 
         let rentabilidadTotal = fnRentabilidadTotal(rentabilidadMensual, cantidadDeMes);
         console.log(rentabilidadTotal);
+        rentabilidadTotalES.textContent = `Rentabilidad Total $ ${rentabilidadTotal}`;
 
         // se declaran los 2 adicionales
 
-        let esCleinteDelBanco = true;
-        let rentabilidadAdicionalPorClienteDelBanco = 0;
+        let esCleinteDelBanco = idCheckClienteBanco.value;
+        console.log(esCleinteDelBanco);
 
-        rentabilidadAdicionalPorClienteDelBanco = fnAdicionalPorSerClienteDelBanco(esCleinteDelBanco, rentabilidadTotal);
-        console.log(rentabilidadAdicionalPorClienteDelBanco);
 
-        let rentabilidadPlazoFijoRenovable = fnAdicionalPorPlazoFijosAutorenovable(true, rentabilidadTotal);
-        console.log(rentabilidadPlazoFijoRenovable);
-    })
+        // funciones de checkbox
+        idCheckClienteBanco.addEventListener("change", () => {
+
+
+
+            let rentabilidadAdicionalPorClienteDelBanco = 0;
+
+            rentabilidadAdicionalPorClienteDelBanco = fnAdicionalPorSerClienteDelBanco(esCleinteDelBanco, rentabilidadTotal);
+            console.log(`rentabilidad${rentabilidadAdicionalPorClienteDelBanco}`);
+
+
+
+
+
+            AdicionalCliente.textContent = `Adicional por Cliente del Banco $ ${rentabilidadAdicionalPorClienteDelBanco}`;
+        });
+
+
+
+        idCheckAutoranovable.addEventListener("change", () => {
+
+            let aceptaAutoRenovable = idCheckAutoranovable.value;
+            rentabilidadPlazoFijoRenovable = fnAdicionalPorPlazoFijosAutorenovable(aceptaAutoRenovable, rentabilidadTotal);
+            console.log(rentabilidadPlazoFijoRenovable);
+            AdicionalPlazoFijo.textContent = `Adicional por Plazo Fijo Auto Renovable (3 meses)$ ${rentabilidadPlazoFijoRenovable}`;
+        });
+
+
+
+        capitalInvertido.textContent = `Capital Invertido es $ ${importeCapital}`;
+        rentabilidadPlazo.textContent = `Rentabilidad Plazo Fijo $ ${rentabilidadMensual}`;
+
+
+    });
 
 
 
