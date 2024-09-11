@@ -4,47 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
+    <link href="src/output.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="estilos.css"> -->
     <title>Ejercicio 7</title>
 </head>
 
 <body>
-    <div style="background-color: aqua;">
-
-        Ingrese el capital
-        <input type="number" id="idCapitalInvertir" placeholder="Ingrese">
-
-        <br> ingrese la cantidad de Meses a realizar el Plazo Fijo
-        <input type="number" id="idCantidadDeMeses">
-        <h1>Tasa Preferencial
-
-        </h1>
-        <br>
-        <label><input type="checkbox" id="idCheckClienteBanco" /> Para Clientes del Banco (0.7%) más sobre rentabilidad
-  </label>
-        <br />
-        <input type="checkbox" name="" id="idCheckAutoranovable">
-        <br> Plazo fijo autorenovable cada 3 meses (0.9%) más sobre rentabilidad
-        <!-- <input type="checkbox" name="" id="idCheckAutoranovable"> -->
-        <br>
-        <button type="button" id="idBtnCalcular">Calcular Rentabilidad</button>
-
-
-        <!-- rentabilidad -->
-        <h1>Rentabilidad Calculada</h1>
-        <label id="capitalInvertido">Capital Invertido</label>
-        <br>
-        <label id="rentabilidadPlazo">Rentabilidad Plazo Fijo</label>
-        <br>
-        <label id="AdicionalCliente">Adicional por Cliente del Banco </label>
-        <br>
-        <label id="AdicionalPlazoFijo">Adicional por Plazo Fijo Auto Renovable (3 meses)</label>
-        <br>
-        <label id="rentabilidadTotal">Rentabilidad Total</label>
-    </div>
-
-
-
+   
+        <h1 className="border-t text-4xl">Trabajo Práctico N°3 </h1> 
+        
+    <main class="max-w-7xl mx-auto py-20 grid md:grid-cols-2">
+        
+        
+        <div class="space-y-3 mt-10 border-2 " style="background-color: aqua;">
+    
+            Ingrese el capital
+            <input type="number" id="idCapitalInvertir" placeholder="Ingrese">
+    
+            <br> ingrese la cantidad de Meses a realizar el Plazo Fijo
+            <input type="number" id="idCantidadDeMeses">
+            <h1>Tasa Preferencial
+    
+            </h1>
+            <br>
+            <label><input type="checkbox" id="idCheckClienteBanco" /> Para Clientes del Banco (0.7%) más sobre rentabilidad
+      </label>
+            <br />
+            <input type="checkbox" name="" id="idCheckAutoranovable">
+            <br> Plazo fijo autorenovable cada 3 meses (0.9%) más sobre rentabilidad
+            <!-- <input type="checkbox" name="" id="idCheckAutoranovable"> -->
+            <br>
+            
+        </div>
+        
+        <div class=" mt-10 justify-between items-center border-t border-gray-200 py-5 last-of-type:border-b">
+            <!-- rentabilidad -->
+            <h1>Rentabilidad Calculada</h1>
+            <label id="capitalInvertido">Capital Invertido</label>
+            <br>
+            <label id="rentabilidadPlazo">Rentabilidad Plazo Fijo</label>
+            <br>
+            <label id="AdicionalCliente">Adicional por Cliente del Banco </label>
+            <br>
+            <label id="AdicionalPlazoFijo">Adicional por Plazo Fijo Auto Renovable (3 meses)</label>
+            <br>
+            <label id="rentabilidadTotal">Rentabilidad Total</label>
+        </div>
+        
+        
+        
+    </main>    
+   <div class="border-2 justify-center  border-teal-400 hover:bg-teal-200  p-3 flex " >
+       <button  type="button" id="idBtnCalcular">Calcular Rentabilidad</button>
+</div> 
+    
 
     <script src="controlador.js"></script>
 </body>
