@@ -10,21 +10,23 @@
 </head>
 
 <body>
-   
-        <h1 className="border-t text-4xl">Trabajo Práctico N°3 </h1> 
-        
+    <div class="text-center">
+
+        <h1 className="border-t text-4xl">Ejercicio Nro. 07 - Simulador de Plazo Fijos </h1>
+    </div>
+
     <main class="max-w-7xl mx-auto py-20 grid md:grid-cols-2">
-        
-        
+
+
         <div class="space-y-3 mt-10 border-2 " style="background-color: aqua;">
-    
+
             Ingrese el capital
             <input type="number" id="idCapitalInvertir" placeholder="Ingrese">
-    
+
             <br> ingrese la cantidad de Meses a realizar el Plazo Fijo
             <input type="number" id="idCantidadDeMeses">
             <h1>Tasa Preferencial
-    
+
             </h1>
             <br>
             <label><input type="checkbox" id="idCheckClienteBanco" /> Para Clientes del Banco (0.7%) más sobre rentabilidad
@@ -34,9 +36,9 @@
             <br> Plazo fijo autorenovable cada 3 meses (0.9%) más sobre rentabilidad
             <!-- <input type="checkbox" name="" id="idCheckAutoranovable"> -->
             <br>
-            
+
         </div>
-        
+
         <div class=" mt-10 justify-between items-center border-t border-gray-200 py-5 last-of-type:border-b">
             <!-- rentabilidad -->
             <h1>Rentabilidad Calculada</h1>
@@ -50,14 +52,14 @@
             <br>
             <label id="rentabilidadTotal">Rentabilidad Total</label>
         </div>
-        
-        
-        
-    </main>    
-   <div class="border-2 justify-center  border-teal-400 hover:bg-teal-200  p-3 flex " >
-       <button  type="button" id="idBtnCalcular">Calcular Rentabilidad</button>
-</div> 
-    
+
+
+
+    </main>
+    <div class="border-2 justify-center  border-teal-400 hover:bg-teal-200  p-3 flex ">
+        <button type="button" id="idBtnCalcular">Calcular Rentabilidad</button>
+    </div>
+
 
     <script src="controlador.js"></script>
 </body>
